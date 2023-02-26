@@ -1,0 +1,19 @@
+.student {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.age {
+  margin-left: 10px;
+}
+
+.gender {
+  margin-left: 10px;
+  text-transform: capitalize;
+}
