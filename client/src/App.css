@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+ul,
+li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  gap: 3rem;
+  background-color: #93bfcf;
+  width: 25%;
+}
+
+.list {
+  text-decoration: none;
+  color: black;
+}
+
+.form {
+  display: flex;
+  gap: 1rem;
+}
+.weatherDisplay {
+  background-color: #d9d9d9;
+  width: 15rem;
+}
+.main {
+  padding: 2rem;
+}

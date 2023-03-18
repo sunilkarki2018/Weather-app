@@ -44,7 +44,7 @@ function FavouriteItem(props) {
     //console.log(uniqueCityList);
     let updatedList = uniqueCityList.filter((x) => x != value);
     let newVal = [...updatedList];
-    //console.log(newVal);
+    console.log(value);
     localStorage.removeItem("favList");
     if (updatedList) localStorage.setItem("favList", JSON.stringify(newVal));
     props.onFavouriteRemove(newVal);
@@ -60,29 +60,40 @@ function FavouriteItem(props) {
     <>
       {weather !== null && (
         <div>
-          {weather.name}
-          {"     "}
-          {weather.weather[0].main}
-          {"     "}
-          {weather.main.temp} °C Feels: {weather.main.feels_like} °C{"     "}
-          {weather.main.temp_min} - {weather.main.temp_max} °C{"     "}
-          <img
-            alt={props.city}
-            style={{ height: 100, width: 100 }}
-            src={ICON_URL + weather.weather[0].icon + ".png"}
-          />
-          {!remove ? (
-            <Button
-              variant="contained"
-              color="primary"
-              size="small"
-              onClick={() => removeFavourite(props.city)}
-            >
-              Remove favourite
-            </Button>
-          ) : (
-            <></>
-          )}
+          <table>
+            <tbody>
+              <tr style={{ display: "flex", gap: "2rem" }}>
+                <td>{weather.name}</td>
+                <td> {weather.weather[0].main}</td>
+                <td>{weather.main.temp} °C</td>
+                <td>{weather.main.feels_like} °C</td>
+                <td>
+                  {weather.main.temp_min} - {weather.main.temp_max} °C
+                </td>
+                <td>
+                  <img
+                    alt={props.city}
+                    style={{ height: 100, width: 100 }}
+                    src={ICON_URL + weather.weather[0].icon + ".png"}
+                  />
+                </td>
+                <td>
+                  {!remove ? (
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size="small"
+                      onClick={() => removeFavourite(props.city)}
+                    >
+                      Remove favourite
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       )}
 

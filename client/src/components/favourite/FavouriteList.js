@@ -1,3 +1,4 @@
+import { Table } from "@mui/material";
 import { useState, useEffect, useHistory } from "react";
 import FavouriteItem from "./FavouriteItem";
 
@@ -32,12 +33,16 @@ function FavouriteList() {
     <div>
       <h1>React Weather Application</h1>
       <h2>Loaded weather forecast</h2>
-      <h2>
-        {" "}
-        City {"     "}Main{"     "} Temp{"     "} Feels{"     "} Min-Max
-        {"     "}Image
-      </h2>
-
+      <thead>
+        <tr style={{ display: "flex", gap: "4rem", paddingLeft: "2rem" }}>
+          <th>City</th>
+          <th>Main</th>
+          <th>Temp</th>
+          <th>Feels</th>
+          <th>Min-Max</th>
+          <th>Image</th>
+        </tr>
+      </thead>
       <div style={{ flex: 1, padding: 20 }}>{cityWeatherItems}</div>
     </div>
   );

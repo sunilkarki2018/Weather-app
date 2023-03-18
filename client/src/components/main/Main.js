@@ -6,6 +6,7 @@ import "react-js-dropdavn/dist/index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Dropdown from "../common/Dropdown";
+import "../../App.css";
 
 const getCityList = () => {
   let list = localStorage.getItem("favList");
@@ -78,18 +79,18 @@ function Main() {
   };
 
   return (
-    <div>
+    <div className="main">
       <h1>React Weather Application</h1>
       <p>
         This application will fetch a weather forecast from the OpenWeather.
         Just type city name and click Get Forecast button!
       </p>
-      <form>
+      <form className="form">
         <Dropdown options={cities} onDropdownChange={onDropdownChangeHandler} />
 
         <Button
           variant="contained"
-          color="primary"
+          color="success"
           size="small"
           onClick={() => getWeatherFromDropdown()}
         >
@@ -98,7 +99,7 @@ function Main() {
         {!favourite ? (
           <Button
             variant="contained"
-            color="primary"
+            color="success"
             size="small"
             onClick={() => addFavouriteFromDropdown()}
           >
@@ -112,7 +113,7 @@ function Main() {
       <ToastContainer />
       <h2>Loaded weather forecast</h2>
       {weather !== null && (
-        <div>
+        <div className="weatherDisplay">
           City: {weather.name}
           <br />
           Main: {weather.weather[0].main}
