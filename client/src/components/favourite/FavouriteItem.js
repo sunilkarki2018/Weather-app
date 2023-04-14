@@ -42,9 +42,9 @@ function FavouriteItem(props) {
     let cityList = getCityList();
     let uniqueCityList = [...new Set(cityList)];
     //console.log(uniqueCityList);
+    console.log(value);
     let updatedList = uniqueCityList.filter((x) => x != value);
     let newVal = [...updatedList];
-    console.log(value);
     localStorage.removeItem("favList");
     if (updatedList) localStorage.setItem("favList", JSON.stringify(newVal));
     props.onFavouriteRemove(newVal);

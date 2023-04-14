@@ -34,7 +34,7 @@ function FavouriteList() {
       <h1>React Weather Application</h1>
       <h2>Loaded weather forecast</h2>
       <thead>
-        <tr style={{ display: "flex", gap: "4rem", paddingLeft: "2rem" }}>
+        <tr style={{ display: "flex", gap: "3rem", paddingLeft: "1rem" }}>
           <th>City</th>
           <th>Main</th>
           <th>Temp</th>
